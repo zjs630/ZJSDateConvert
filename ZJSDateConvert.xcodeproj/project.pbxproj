@@ -16,7 +16,6 @@
 		E5131ADA1E5AA0370083FAE7 /* DateConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AD01E5AA0370083FAE7 /* DateConvert.m */; };
 		E5131ADB1E5AA0370083FAE7 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AD21E5AA0370083FAE7 /* DateViewController.m */; };
 		E5131AE81E5AA0880083FAE7 /* BirthdayData.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AE01E5AA0880083FAE7 /* BirthdayData.m */; };
-		E5131AE91E5AA0880083FAE7 /* LeapMonthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AE21E5AA0880083FAE7 /* LeapMonthInfo.m */; };
 		E5131AEA1E5AA0880083FAE7 /* DateControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AE51E5AA0880083FAE7 /* DateControlView.m */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +36,6 @@
 		E5131AD21E5AA0370083FAE7 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateViewController.m; path = Classes/DataConvert/DateViewController.m; sourceTree = "<group>"; };
 		E5131ADF1E5AA0880083FAE7 /* BirthdayData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BirthdayData.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E5131AE01E5AA0880083FAE7 /* BirthdayData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BirthdayData.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		E5131AE11E5AA0880083FAE7 /* LeapMonthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapMonthInfo.h; sourceTree = "<group>"; };
-		E5131AE21E5AA0880083FAE7 /* LeapMonthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeapMonthInfo.m; sourceTree = "<group>"; };
 		E5131AE41E5AA0880083FAE7 /* DateControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateControlView.h; sourceTree = "<group>"; };
 		E5131AE51E5AA0880083FAE7 /* DateControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DateControlView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
@@ -113,8 +110,6 @@
 			children = (
 				E5131ADF1E5AA0880083FAE7 /* BirthdayData.h */,
 				E5131AE01E5AA0880083FAE7 /* BirthdayData.m */,
-				E5131AE11E5AA0880083FAE7 /* LeapMonthInfo.h */,
-				E5131AE21E5AA0880083FAE7 /* LeapMonthInfo.m */,
 			);
 			name = Model;
 			path = Classes/DataConvert/Model;
@@ -207,7 +202,6 @@
 				E5131AB61E5A9FCA0083FAE7 /* AppDelegate.m in Sources */,
 				E5131ADB1E5AA0370083FAE7 /* DateViewController.m in Sources */,
 				E5131AB31E5A9FCA0083FAE7 /* main.m in Sources */,
-				E5131AE91E5AA0880083FAE7 /* LeapMonthInfo.m in Sources */,
 				E5131AEA1E5AA0880083FAE7 /* DateControlView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

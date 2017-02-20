@@ -9,20 +9,18 @@
 #import "DateControlView.h"
 
 #import "BirthdayData.h"
-#import "LeapMonthInfo.h"
 #import "DateConvert.h"
 
 @interface DateControlView()
 @property (nonatomic,strong) UIPickerView *myPickView;
 @property (nonatomic,strong) UIButton *isLeapMonthButton;
 @property (nonatomic,strong) UIImageView *selectedLeapMonth;
-
 @property (nonatomic,strong) UISegmentedControl *segmentedCtrl;
 
 @property (nonatomic,strong) DateConvert *dateConvert;
+@property(nonatomic, strong) LeapMonthInfo *leapMonthInfo;
 
 @property (nonatomic,assign) NSUInteger dayCount;   //日历控件依据月份，要显示的天数
-
 @end
 
 @implementation DateControlView
@@ -54,7 +52,6 @@
 		[_segmentedCtrl addTarget:self action:@selector(segmentChanged:) forControlEvents:UIControlEventValueChanged];
 		[self addSubview:_segmentedCtrl];
 
-        
 		//create three buttons
 		_isLeapMonthButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		_isLeapMonthButton.frame = CGRectMake(154, frame.size.height-180-39-32, 100, 32);
@@ -91,6 +88,7 @@
     }
     return self;
 }
+
 - (void)setupDefaultDate:(BirthdayData *)birthday{//未指定BirthdayData数据，初始化为当前时间。
 	//获取当前日期和时间
     NSDate *dt = [NSDate date];
@@ -209,6 +207,7 @@
 		_birthdayData.isRunYue =NO;
 	}
 }
+
 -(void)isLeapMonthButtonPressed{
 	if (_birthdayData.isRunYue == NO) {
 		_birthdayData.isRunYue = YES;
@@ -221,9 +220,7 @@
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"JustShowBirthdayData" object:_birthdayData];
 }
 
-#pragma mark -
-#pragma mark Picker Private Methods
-
+#pragma mark - Picker Private Methods
 
 -(void)updateNongLiDay:(BOOL)isBig{
 	if (isBig) {
@@ -244,15 +241,13 @@
 	_birthdayData.day = [_myPickView selectedRowInComponent:kDayComponent]+1;
 }
 
-#pragma mark -
-#pragma mark Picker Data Source Methods
+#pragma mark - Picker Data Source Methods
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
 	return 3;
 }
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
 	if (component == kYearComponent) {
         NSInteger count = 2049 - startYear + 1;
 		return count;
@@ -265,7 +260,8 @@
 	}
 	return 0;
 }
-#pragma mark Picker Delegate Methods
+
+#pragma mark - Picker Delegate Methods
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
 	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)];
@@ -287,7 +283,6 @@
 			break;
 	}
 	[label setText:tempString];
-//	[label setUserInteractionEnabled:NO];
     return label;
 }
 
@@ -348,8 +343,8 @@
 	}
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"JustShowBirthdayData" object:_birthdayData];
 }
-- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
-{
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
 	CGFloat myWidth = self.bounds.size.width/3;
 	return myWidth;
 }

@@ -20,7 +20,6 @@
 @interface DateControlView : UIView <UIPickerViewDelegate,UIPickerViewDataSource>
 
 
-@property(nonatomic, strong) LeapMonthInfo *leapMonthInfo;
 @property(nonatomic,strong) BirthdayData *birthdayData;
 
 - (void)setupDefaultDate:(BirthdayData *)birthday;  //为日期控件设置默认日期。

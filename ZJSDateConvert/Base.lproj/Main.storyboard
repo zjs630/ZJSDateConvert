@@ -22,16 +22,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCd-UT-PGd">
-                                <rect key="frame" x="166.5" y="124" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="158.5" y="124" width="58.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSX-LR-Cme">
+                                <rect key="frame" x="141.5" y="172" width="92" height="30"/>
+                                <state key="normal" title="显示日期控件"/>
+                                <connections>
+                                    <action selector="show" destination="BYZ-38-t0r" eventType="touchUpInside" id="xFi-kn-VOW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gCd-UT-PGd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CmH-cQ-yDm"/>
                             <constraint firstItem="gCd-UT-PGd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="EAZ-T5-4hF"/>
+                            <constraint firstItem="PSX-LR-Cme" firstAttribute="top" secondItem="gCd-UT-PGd" secondAttribute="bottom" constant="19" id="Ww3-GN-Z46"/>
+                            <constraint firstItem="PSX-LR-Cme" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iRW-F4-UOA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ioe-Kr-EXl"/>

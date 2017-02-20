@@ -1,4 +1,4 @@
-    //
+//
 //  DateViewController.m
 //  DatePickerLibrary
 //
@@ -12,27 +12,27 @@
 
 @property(nonatomic,strong) DateControlView *dateControlView;
 
-
 @end
+
 @implementation DateViewController
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super init])) {
-		
-		[self.view setFrame:frame];//
-
-		_dateControlView = [[DateControlView alloc] initWithFrame:[self.view bounds]];
-		[self.view addSubview:_dateControlView];
-
-		UIGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backGroundTaped)];
-		[self.view addGestureRecognizer:tapRecognizer];
-		tapRecognizer.delegate = self;
-	}
+        
+        [self.view setFrame:frame];//
+        
+        _dateControlView = [[DateControlView alloc] initWithFrame:[self.view bounds]];
+        [self.view addSubview:_dateControlView];
+        
+        UIGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backGroundTaped)];
+        [self.view addGestureRecognizer:tapRecognizer];
+        tapRecognizer.delegate = self;
+    }
     return self;
 }
 
--(void)backGroundTaped{
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"PassMyBirthdayData" object:(_dateControlView.birthdayData)];//目的主要将显示的日期保存。
-	//[[NSNotificationCenter defaultCenter] postNotificationName:@"JustShowBirthdayData" object:birthdayData];	//仅UI显示日期
+- (void)backGroundTaped{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SaveDataAndCloseView" object:(_dateControlView.birthdayData)];//目的主要将显示的日期保存同时关闭这个页面。
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"JustShowBirthdayData" object:birthdayData];	//仅UI显示日期
 }
 
 /**
@@ -44,11 +44,14 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-	if (touch.view == _dateControlView) {
-		return YES;
-	}
+    if (touch.view == _dateControlView) {
+        return YES;
+    }
     return NO;
 }
 
-
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+}
 @end

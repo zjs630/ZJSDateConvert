@@ -9,18 +9,17 @@
 //使用方法：
 /*
 1，导入头文件
-#import "../DatePickerLibrary/BirthdayData.h"
-#import "../DatePickerLibrary/DateViewController.h"
+#import "BirthdayData.h"
+#import "DateViewController.h"
  
 2，添加通知
- [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setOneBirthdayData:) name:@"PassMyBirthdayData" object:nil];
+ [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setOneBirthdayData:) name:@"SaveDataAndCloseView" object:nil];
  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(justShowBirthdayData:) name:@"JustShowBirthdayData" object:nil];
  
  3，显示日期控件。
 dateViewController = [[DateViewController alloc] initWithFrame:CGRectMake(0,44, 320, 460)];
+ [dateViewController setupDefaultDate:nil]; //一定要设置时间。//参数为空，显示当前时间。
 [self.view addSubview:dateViewController.view];
- //一定要设置时间。
-[[NSNotificationCenter defaultCenter] postNotificationName:@"SetMyBirthdayData" object:nil];//object参数为空，显示当前时间。
  
  4，实现通知方法。
  -(void)setOneBirthdayData:(NSNotification *)notifi{

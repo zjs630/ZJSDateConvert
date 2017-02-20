@@ -47,8 +47,21 @@ static unsigned long const solarMonthCount2[]={
 
 }
 
+/**
+ 将农历日期转换为公历日期
+
+ @param nongLiDate 农历日期
+ */
 -(BirthdayData *)Convert2GongLi:(BirthdayData *)nongLiDate;
+
+/**
+ 将公历日期转换为农历日期
+ 
+ @param gongLiDate 公历日期
+ */
 -(BirthdayData *)Convert2NongLi:(BirthdayData *)gongLiDate;
+
+
 
 -(LeapMonthInfo *)ReturnLeapMonthInfo:(NSUInteger)year;//返回农历闰月信息。////是否闰月，闰几月，是大月或小月
 -(BOOL)BigOrSmallMonth:(NSUInteger)month Year:(NSUInteger)year;//农历某月是大月或小月。Yes 大月，No小月。

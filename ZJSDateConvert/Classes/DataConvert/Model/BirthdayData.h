@@ -17,14 +17,24 @@ typedef NS_ENUM(NSUInteger,DateType) {
 
 @interface BirthdayData : NSObject <NSCoding>
 
-@property(nonatomic) NSUInteger year;
-@property(nonatomic) NSUInteger month;
-@property(nonatomic) NSUInteger day;
-@property(nonatomic) NSUInteger hour;
-@property(nonatomic) DateType dateType;
-@property(nonatomic) BOOL isRunYue; //是否闰月
+@property(nonatomic, assign) NSUInteger year;
+@property(nonatomic, assign) NSUInteger month;
+@property(nonatomic, assign) NSUInteger day;
+@property(nonatomic, assign) NSUInteger hour;
+@property(nonatomic, assign) DateType dateType;
+@property(nonatomic, assign) BOOL isRunYue; //是否闰月
 
 -(void)setMyBirthdayData:(BirthdayData *)data;
+
 -(void)setMyBirthdayData:(NSUInteger)y m:(NSUInteger)m d:(NSUInteger)d h:(NSUInteger)h t:(NSUInteger)t r:(BOOL)r;
+
+@end
+
+
+@interface LeapMonthInfo : NSObject
+
+@property(nonatomic) BOOL hasLeapMonth;             //是否闰月
+@property(nonatomic) BOOL isBig;                    //闰几月
+@property(nonatomic) NSUInteger leapMonthNumber;    //闰大月或小月，1大，0小
 
 @end

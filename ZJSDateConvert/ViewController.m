@@ -23,30 +23,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setOneBirthdayData:) name:@"PassMyBirthdayData" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setOneBirthdayData:) name:@"SaveDataAndCloseView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(justShowBirthdayData:) name:@"JustShowBirthdayData" object:nil];
+}
 
-    _dateViewController = [[DateViewController alloc] initWithFrame:CGRectMake(0,44, self.view.bounds.size.width, self.view.bounds.size.height)];
-    [_dateViewController setupDefaultDate:nil];
-    [self.view addSubview:_dateViewController.view];
-
+- (IBAction)show {
+    if (_dateViewController == nil) {
+        _dateViewController = [[DateViewController alloc] initWithFrame:CGRectMake(0,44, self.view.bounds.size.width, self.view.bounds.size.height)];
+        [_dateViewController setupDefaultDate:nil];
+        [self.view addSubview:_dateViewController.view];
+    }
 }
 
 -(void)setOneBirthdayData:(NSNotification *)notifi{
     //BirthdayData *tempData = (BirthdayData *)[notifi object];
     //......进行日期本地存储。
-    
+    if (_dateViewController) {
+        [_dateViewController.view removeFromSuperview];
+        _dateViewController = nil;
+    }
     
 }
 
 -(void)justShowBirthdayData:(NSNotification *)notifi{
     BirthdayData *tempData = (BirthdayData *)[notifi object];
     NSString *temp2 = [self oneBirthdayString:tempData];
-//    dateTextField.text = temp2;
     _dateLabel.text = temp2;
-    
 }
 
 -(NSString *)oneBirthdayString:(BirthdayData *)oneData{

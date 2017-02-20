@@ -7,11 +7,7 @@
 //
 
 #import "DateConvert.h"
-#import "LeapMonthInfo.h"
 #import"BirthdayData.h"
-@interface DateConvert ()
-
-@end
 
 @implementation DateConvert
 
@@ -47,8 +43,8 @@
 	
 	//求年(iYear)
     NSUInteger gongLiYearDaysCount = 0;
-    NSUInteger iYear = 1900;
-	for (iYear; iYear <= year; iYear++) {
+    NSUInteger resultYear = 0;
+	for (NSUInteger iYear = 1900; iYear <= year; iYear++) {
 		NSUInteger temp =0;
 		if ([self isLeapYear:iYear]) {//这一年是否闰年
 			temp = 366;
@@ -59,34 +55,37 @@
 		gongLiYearDaysCount += temp;
 		if (gongLiYearDaysCount>=yearDays) {
 			gongLiYearDaysCount -=temp;
+            resultYear = iYear;
 			break;
 		}
 	}
-    nongLiDate.year = iYear;
+    nongLiDate.year = resultYear;
 
 	//求月份 m月
 	NSUInteger monthDays = yearDays - gongLiYearDaysCount;
-	NSUInteger m = 1,d = 0;
+	NSUInteger resultMonth = 1,d = 0;
 	if ([self isLeapYear:year]) {//这一年是否闰年
-		for (m; m<=12; m++) {
+		for (NSUInteger m = 1; m<=12; m++) {
 			if (solarMonthCount2[m] >= monthDays) {
 				//求天
 				d = monthDays - solarMonthCount2[m-1];
+                resultMonth = m;
 				break;
 			}
 		}
 	}
 	else {
-		for (m; m<=12; m++) {
+		for (NSUInteger m = 1; m<=12; m++) {
 			if (solarMonthCount[m] >= monthDays) {
 				//求天
 				d = monthDays - solarMonthCount[m-1];
+                resultMonth = m;
 				break;
 			}
 		}
 	}
 
-	nongLiDate.month = m;
+	nongLiDate.month = resultMonth;
 	nongLiDate.day = d;
 	nongLiDate.dateType = kGongLi;
 	nongLiDate.isRunYue = NO;
@@ -148,8 +147,6 @@
 					k = -1;
 					--n;
 				}
-
-
 			}
 			else {
 				NSUInteger temp2 = [self monthDays:n year:y];
