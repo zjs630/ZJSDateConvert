@@ -15,7 +15,6 @@ typedef NS_ENUM(NSUInteger,DateType) {
     kOther,
 };
 
-
 @interface BirthdayData : NSObject <NSCoding>
 
 @property(nonatomic) NSUInteger year;

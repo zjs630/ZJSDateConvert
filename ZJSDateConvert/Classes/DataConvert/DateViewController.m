@@ -8,15 +8,20 @@
 
 #import "DateViewController.h"
 #import "DateControlView.h"
+@interface DateViewController()
 
+@property(nonatomic,strong) DateControlView *dateControlView;
+
+
+@end
 @implementation DateViewController
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super init])) {
 		
 		[self.view setFrame:frame];//
 
-		dateControlView = [[DateControlView alloc] initWithFrame:[self.view bounds]];
-		[self.view addSubview:dateControlView];
+		_dateControlView = [[DateControlView alloc] initWithFrame:[self.view bounds]];
+		[self.view addSubview:_dateControlView];
 
 		UIGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backGroundTaped)];
 		[self.view addGestureRecognizer:tapRecognizer];
@@ -26,16 +31,20 @@
 }
 
 -(void)backGroundTaped{
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"PassMyBirthdayData" object:(dateControlView.birthdayData)];//目的主要将显示的日期保存。
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"PassMyBirthdayData" object:(_dateControlView.birthdayData)];//目的主要将显示的日期保存。
 	//[[NSNotificationCenter defaultCenter] postNotificationName:@"JustShowBirthdayData" object:birthdayData];	//仅UI显示日期
 }
 
-//-(NSString *)getMyBirthdayData{
-//	return [dateControlView getBirthdayDataInfo];
-//}
+/**
+ 为日期控件设置默认日期。
+ @param birthday 年月日，传nil，默认为当前日期
+ */
+- (void)setupDefaultDate:(BirthdayData *)birthday{
+    [_dateControlView setupDefaultDate:birthday];
+}
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-	if (touch.view == dateControlView) {
+	if (touch.view == _dateControlView) {
 		return YES;
 	}
     return NO;

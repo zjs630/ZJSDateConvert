@@ -11,16 +11,18 @@
 #import "BirthdayData.h"
 #import "LeapMonthInfo.h"
 #import "DateConvert.h"
-#import "PickerViewLabel.h"
 
 @interface DateControlView()
 @property (nonatomic,strong) UIPickerView *myPickView;
 @property (nonatomic,strong) UIButton *isLeapMonthButton;
 @property (nonatomic,strong) UIImageView *selectedLeapMonth;
+
 @property (nonatomic,strong) UISegmentedControl *segmentedCtrl;
+
 @property (nonatomic,strong) DateConvert *dateConvert;
-@property (nonatomic,assign) NSUInteger dayCount;
-@property (nonatomic,assign) NSUInteger yearCount;
+
+@property (nonatomic,assign) NSUInteger dayCount;   //日历控件依据月份，要显示的天数
+
 @end
 
 @implementation DateControlView
@@ -30,25 +32,24 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-		self.backgroundColor = [UIColor greenColor];
 		//创建UIPickerView对象
         _myPickView = [[UIPickerView alloc] init];
-		_myPickView.frame = CGRectMake(0, 237, frame.size.width,180);
+		_myPickView.frame = CGRectMake(0, frame.size.height-180-39, frame.size.width,180);
 		_myPickView.delegate = self;
 		_myPickView.dataSource = self;
-		_myPickView.backgroundColor = [UIColor redColor];
+		_myPickView.backgroundColor = [UIColor whiteColor];
 		_myPickView.showsSelectionIndicator = YES;
 		[self addSubview:_myPickView];
 		
 		//datePicker上部背景
-		UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 202, frame.size.width, 39)];
+		UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height-180-39-35, frame.size.width, 39)];
 		[bgView setUserInteractionEnabled:NO];
 		bgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"datePicker_bg.png"]];
 		[self addSubview:bgView];
 		
 		NSArray *textOptionsArray = [NSArray arrayWithObjects:@"公历",@"农历", nil];
 		_segmentedCtrl = [[UISegmentedControl alloc] initWithItems:textOptionsArray];
-		_segmentedCtrl.frame = CGRectMake(20.0, 140.0, 180, 37);
+		_segmentedCtrl.frame = CGRectMake(20.0, frame.size.height-180-39-32, 120, 32);
 		_segmentedCtrl.selectedSegmentIndex = 0;
 		[_segmentedCtrl addTarget:self action:@selector(segmentChanged:) forControlEvents:UIControlEventValueChanged];
 		[self addSubview:_segmentedCtrl];
@@ -56,13 +57,13 @@
         
 		//create three buttons
 		_isLeapMonthButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		_isLeapMonthButton.frame = CGRectMake(144, 209, 100, 32);
+		_isLeapMonthButton.frame = CGRectMake(154, frame.size.height-180-39-32, 100, 32);
 		//[isLeapMonthButton setBackgroundColor:[UIColor redColor]];
 		//[isLeapMonthButton setTitle:@"是否闰月" forState:UIControlStateNormal];
 		//[isLeapMonthButton setBackgroundImage:[UIImage imageNamed:@"button_isLeapMonth.png"] forState:UIControlStateNormal];
 		[_isLeapMonthButton addTarget:self action:@selector(isLeapMonthButtonPressed) forControlEvents:UIControlEventTouchUpInside];
 		[self addSubview:_isLeapMonthButton];
-//		isLeapMonthButton.hidden = YES;
+		_isLeapMonthButton.hidden = YES;
 		
 		//one pic
 		UIImageView *oneImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 5, 22, 22)];
@@ -87,13 +88,10 @@
 		_leapMonthInfo = [[LeapMonthInfo alloc] init];
 		
 		_dateConvert = [[DateConvert alloc] init];
-
-        //	dayCount = 30;
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initDefaultDate:) name:@"SetMyBirthdayData" object:nil];
     }
     return self;
 }
-- (void)initDefaultDate:(NSNotification *)notifi{//未指定BirthdayData数据，初始化为当前时间。
+- (void)setupDefaultDate:(BirthdayData *)birthday{//未指定BirthdayData数据，初始化为当前时间。
 	//获取当前日期和时间
     NSDate *dt = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -102,13 +100,11 @@
     NSString *str = [formatter stringFromDate:dt];
     NSArray *myDate = [str componentsSeparatedByString:@"/"];
     
-    _yearCount = [[myDate objectAtIndex:0] intValue] - startYear + 1;
-
-    if ([notifi object] == nil) {
+    if (birthday == nil) {
 		[_birthdayData setMyBirthdayData:[[myDate objectAtIndex:0] intValue]m:[[myDate objectAtIndex:1] intValue] d:[[myDate objectAtIndex:2] intValue] h:[[myDate objectAtIndex:3] intValue] t:kGongLi r:NO];
 	}
 	else {
-		[_birthdayData setMyBirthdayData:(BirthdayData *)[notifi object]];
+		[_birthdayData setMyBirthdayData:birthday];
 	}
 	
 	if (_birthdayData.dateType == kNongLi) {
@@ -132,15 +128,7 @@
 	[_myPickView selectRow:_birthdayData.month-1 inComponent:1 animated:NO];//x月
 	[_myPickView reloadComponent:kDayComponent];
 	[_myPickView selectRow:_birthdayData.day-1 inComponent:2 animated:NO];//x日
-	[_myPickView selectRow:_birthdayData.hour inComponent:3 animated:NO];//x时
 }
-
-//- (void)initDefaultDate{
-//	[myPickView selectRow:birthdayData.year-1900 inComponent:0 animated:NO];//年
-//	[myPickView selectRow:birthdayData.month-1 inComponent:1 animated:NO];//月
-//	[myPickView selectRow:birthdayData.day-1 inComponent:2 animated:NO];//日
-//	[myPickView selectRow:birthdayData.hour-1 inComponent:3 animated:NO];//时
-//}
 
 -(void)segmentChanged:(id)sender{
 	if ([(UISegmentedControl *)sender selectedSegmentIndex]==0) { //通过判断点击的是UISegmentedControl中的哪个按钮。
@@ -158,8 +146,8 @@
 	}
 	if (_birthdayData.year == 2049) {
 		if (_birthdayData.month == 12 && _birthdayData.day >7) {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"选择日期超出转换范围！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
-			[alert show];
+            //FIXME:提示信息
+            NSLog(@"提示:日期转换超出转换范围！");
 			return;
 		}
 	}
@@ -184,8 +172,8 @@
 	}
 	if (_birthdayData.year == 1901) {
 		if (_birthdayData.month == 1 || (_birthdayData.month == 2 && _birthdayData.day < 19)){
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"选择日期超出转换范围！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
-			[alert show];
+            //FIXME:提示信息
+            NSLog(@"提示:日期转换超出转换范围！");
 			return;
 		}
 	}
@@ -266,7 +254,8 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
 	if (component == kYearComponent) {
-		return _yearCount;
+        NSInteger count = 2049 - startYear + 1;
+		return count;
 	}
 	else if(component == kMonthComponent){
 		return 12;
@@ -279,7 +268,7 @@
 #pragma mark Picker Delegate Methods
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
-	PickerViewLabel *label = [[PickerViewLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)];
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)];
 	[label setTextAlignment:NSTextAlignmentCenter];
 	[label setBackgroundColor:[UIColor clearColor]];
 	[label setFont:[UIFont systemFontOfSize:20.0]];

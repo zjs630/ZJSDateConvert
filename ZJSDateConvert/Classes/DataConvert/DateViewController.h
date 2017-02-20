@@ -40,15 +40,12 @@ dateViewController = [[DateViewController alloc] initWithFrame:CGRectMake(0,44, 
 #import <UIKit/UIKit.h>
 
 @class DateControlView,BirthdayData;
-@interface DateViewController : UIViewController<UIGestureRecognizerDelegate>{
-	
-	DateControlView *dateControlView;
-	
-}
+@interface DateViewController : UIViewController<UIGestureRecognizerDelegate>
 
 - (id)initWithFrame:(CGRect)frame;
 -(void)backGroundTaped;
 
 //-(NSString *)getMyBirthdayData;
 //-(void)setMyBirthdayData:(BirthdayData *)birthdayData;
+- (void)setupDefaultDate:(BirthdayData *)birthday;  //为日期控件设置默认日期。
 @end

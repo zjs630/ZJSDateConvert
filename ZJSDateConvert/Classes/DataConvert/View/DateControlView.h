@@ -11,7 +11,7 @@
 #define kYearComponent 0
 #define kMonthComponent 1
 #define kDayComponent 2
-#define kHourComponent 3
+
 
 #define startYear 1901
 
@@ -22,6 +22,7 @@
 
 @property(nonatomic, strong) LeapMonthInfo *leapMonthInfo;
 @property(nonatomic,strong) BirthdayData *birthdayData;
-//
-//- (void)initDefaultDate;//为日期控件设置默认日期。
+
+- (void)setupDefaultDate:(BirthdayData *)birthday;  //为日期控件设置默认日期。
+
 @end
