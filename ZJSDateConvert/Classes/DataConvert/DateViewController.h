@@ -13,7 +13,7 @@
 #import "DateViewController.h"
  
 2，添加通知
- [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setOneBirthdayData:) name:@"SaveDataAndCloseView" object:nil];
+ [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveDataAndCloseView:) name:@"SaveDataAndCloseView" object:nil];
  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(justShowBirthdayData:) name:@"JustShowBirthdayData" object:nil];
  
  3，显示日期控件。
@@ -22,7 +22,7 @@ dateViewController = [[DateViewController alloc] initWithFrame:CGRectMake(0,44, 
 [self.view addSubview:dateViewController.view];
  
  4，实现通知方法。
- -(void)setOneBirthdayData:(NSNotification *)notifi{
+ -(void)saveDataAndCloseView:(NSNotification *)notifi{
  BirthdayData *tempData = (BirthdayData *)[notifi object];
  //......进行日期本地存储。
  }
@@ -44,7 +44,6 @@ dateViewController = [[DateViewController alloc] initWithFrame:CGRectMake(0,44, 
 - (id)initWithFrame:(CGRect)frame;
 -(void)backGroundTaped;
 
-//-(NSString *)getMyBirthdayData;
-//-(void)setMyBirthdayData:(BirthdayData *)birthdayData;
 - (void)setupDefaultDate:(BirthdayData *)birthday;  //为日期控件设置默认日期。
+
 @end

@@ -25,7 +25,7 @@
     [super viewDidLoad];
 
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setOneBirthdayData:) name:@"SaveDataAndCloseView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveDataAndCloseView:) name:@"SaveDataAndCloseView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(justShowBirthdayData:) name:@"JustShowBirthdayData" object:nil];
 }
 
@@ -37,7 +37,7 @@
     }
 }
 
--(void)setOneBirthdayData:(NSNotification *)notifi{
+-(void)saveDataAndCloseView:(NSNotification *)notifi{
     //BirthdayData *tempData = (BirthdayData *)[notifi object];
     //......进行日期本地存储。
     if (_dateViewController) {
