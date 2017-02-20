@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E5131AB31E5A9FCA0083FAE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AB21E5A9FCA0083FAE7 /* main.m */; };
+		E5131AB61E5A9FCA0083FAE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AB51E5A9FCA0083FAE7 /* AppDelegate.m */; };
+		E5131AB91E5A9FCA0083FAE7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AB81E5A9FCA0083FAE7 /* ViewController.m */; };
+		E5131ABC1E5A9FCA0083FAE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5131ABA1E5A9FCA0083FAE7 /* Main.storyboard */; };
+		E5131ABE1E5A9FCA0083FAE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5131ABD1E5A9FCA0083FAE7 /* Assets.xcassets */; };
+		E5131AC11E5A9FCA0083FAE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5131ABF1E5A9FCA0083FAE7 /* LaunchScreen.storyboard */; };
+		E5131AD81E5AA0370083FAE7 /* convertGB_BIG.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131ACC1E5AA0370083FAE7 /* convertGB_BIG.m */; };
+		E5131ADA1E5AA0370083FAE7 /* DateConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AD01E5AA0370083FAE7 /* DateConvert.m */; };
+		E5131ADB1E5AA0370083FAE7 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AD21E5AA0370083FAE7 /* DateViewController.m */; };
+		E5131AE81E5AA0880083FAE7 /* BirthdayData.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AE01E5AA0880083FAE7 /* BirthdayData.m */; };
+		E5131AE91E5AA0880083FAE7 /* LeapMonthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AE21E5AA0880083FAE7 /* LeapMonthInfo.m */; };
+		E5131AEA1E5AA0880083FAE7 /* DateControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AE51E5AA0880083FAE7 /* DateControlView.m */; };
+		E5131AEB1E5AA0880083FAE7 /* PickerViewLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5131AE71E5AA0880083FAE7 /* PickerViewLabel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E5131AAE1E5A9FCA0083FAE7 /* ZJSDateConvert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJSDateConvert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5131AB21E5A9FCA0083FAE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E5131AB41E5A9FCA0083FAE7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E5131AB51E5A9FCA0083FAE7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E5131AB71E5A9FCA0083FAE7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E5131AB81E5A9FCA0083FAE7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E5131ABB1E5A9FCA0083FAE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E5131ABD1E5A9FCA0083FAE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5131AC01E5A9FCA0083FAE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E5131AC21E5A9FCA0083FAE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5131ACB1E5AA0370083FAE7 /* convertGB_BIG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = convertGB_BIG.h; path = Classes/DataConvert/convertGB_BIG.h; sourceTree = "<group>"; };
+		E5131ACC1E5AA0370083FAE7 /* convertGB_BIG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = convertGB_BIG.m; path = Classes/DataConvert/convertGB_BIG.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E5131ACF1E5AA0370083FAE7 /* DateConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = DateConvert.h; path = Classes/DataConvert/DateConvert.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E5131AD01E5AA0370083FAE7 /* DateConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateConvert.m; path = Classes/DataConvert/DateConvert.m; sourceTree = "<group>"; };
+		E5131AD11E5AA0370083FAE7 /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateViewController.h; path = Classes/DataConvert/DateViewController.h; sourceTree = "<group>"; };
+		E5131AD21E5AA0370083FAE7 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateViewController.m; path = Classes/DataConvert/DateViewController.m; sourceTree = "<group>"; };
+		E5131ADF1E5AA0880083FAE7 /* BirthdayData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BirthdayData.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E5131AE01E5AA0880083FAE7 /* BirthdayData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BirthdayData.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E5131AE11E5AA0880083FAE7 /* LeapMonthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapMonthInfo.h; sourceTree = "<group>"; };
+		E5131AE21E5AA0880083FAE7 /* LeapMonthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeapMonthInfo.m; sourceTree = "<group>"; };
+		E5131AE41E5AA0880083FAE7 /* DateControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateControlView.h; sourceTree = "<group>"; };
+		E5131AE51E5AA0880083FAE7 /* DateControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DateControlView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E5131AE61E5AA0880083FAE7 /* PickerViewLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewLabel.h; sourceTree = "<group>"; };
+		E5131AE71E5AA0880083FAE7 /* PickerViewLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewLabel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5131AAB1E5A9FCA0083FAE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E5131AA51E5A9FCA0083FAE7 = {
+			isa = PBXGroup;
+			children = (
+				E5131AB01E5A9FCA0083FAE7 /* ZJSDateConvert */,
+				E5131AAF1E5A9FCA0083FAE7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E5131AAF1E5A9FCA0083FAE7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5131AAE1E5A9FCA0083FAE7 /* ZJSDateConvert.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5131AB01E5A9FCA0083FAE7 /* ZJSDateConvert */ = {
+			isa = PBXGroup;
+			children = (
+				E5131AC81E5A9FD10083FAE7 /* DataConvert */,
+				E5131AB41E5A9FCA0083FAE7 /* AppDelegate.h */,
+				E5131AB51E5A9FCA0083FAE7 /* AppDelegate.m */,
+				E5131AB71E5A9FCA0083FAE7 /* ViewController.h */,
+				E5131AB81E5A9FCA0083FAE7 /* ViewController.m */,
+				E5131ABA1E5A9FCA0083FAE7 /* Main.storyboard */,
+				E5131ABD1E5A9FCA0083FAE7 /* Assets.xcassets */,
+				E5131ABF1E5A9FCA0083FAE7 /* LaunchScreen.storyboard */,
+				E5131AC21E5A9FCA0083FAE7 /* Info.plist */,
+				E5131AB11E5A9FCA0083FAE7 /* Supporting Files */,
+			);
+			path = ZJSDateConvert;
+			sourceTree = "<group>";
+		};
+		E5131AB11E5A9FCA0083FAE7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E5131AB21E5A9FCA0083FAE7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E5131AC81E5A9FD10083FAE7 /* DataConvert */ = {
+			isa = PBXGroup;
+			children = (
+				E5131ADE1E5AA0880083FAE7 /* Model */,
+				E5131AE31E5AA0880083FAE7 /* View */,
+				E5131ACB1E5AA0370083FAE7 /* convertGB_BIG.h */,
+				E5131ACC1E5AA0370083FAE7 /* convertGB_BIG.m */,
+				E5131ACF1E5AA0370083FAE7 /* DateConvert.h */,
+				E5131AD01E5AA0370083FAE7 /* DateConvert.m */,
+				E5131AD11E5AA0370083FAE7 /* DateViewController.h */,
+				E5131AD21E5AA0370083FAE7 /* DateViewController.m */,
+			);
+			name = DataConvert;
+			sourceTree = "<group>";
+		};
+		E5131ADE1E5AA0880083FAE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5131ADF1E5AA0880083FAE7 /* BirthdayData.h */,
+				E5131AE01E5AA0880083FAE7 /* BirthdayData.m */,
+				E5131AE11E5AA0880083FAE7 /* LeapMonthInfo.h */,
+				E5131AE21E5AA0880083FAE7 /* LeapMonthInfo.m */,
+			);
+			name = Model;
+			path = Classes/DataConvert/Model;
+			sourceTree = "<group>";
+		};
+		E5131AE31E5AA0880083FAE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5131AE41E5AA0880083FAE7 /* DateControlView.h */,
+				E5131AE51E5AA0880083FAE7 /* DateControlView.m */,
+				E5131AE61E5AA0880083FAE7 /* PickerViewLabel.h */,
+				E5131AE71E5AA0880083FAE7 /* PickerViewLabel.m */,
+			);
+			name = View;
+			path = Classes/DataConvert/View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5131AAD1E5A9FCA0083FAE7 /* ZJSDateConvert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5131AC51E5A9FCA0083FAE7 /* Build configuration list for PBXNativeTarget "ZJSDateConvert" */;
+			buildPhases = (
+				E5131AAA1E5A9FCA0083FAE7 /* Sources */,
+				E5131AAB1E5A9FCA0083FAE7 /* Frameworks */,
+				E5131AAC1E5A9FCA0083FAE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZJSDateConvert;
+			productName = ZJSDateConvert;
+			productReference = E5131AAE1E5A9FCA0083FAE7 /* ZJSDateConvert.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5131AA61E5A9FCA0083FAE7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = zjs;
+				TargetAttributes = {
+					E5131AAD1E5A9FCA0083FAE7 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E5131AA91E5A9FCA0083FAE7 /* Build configuration list for PBXProject "ZJSDateConvert" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E5131AA51E5A9FCA0083FAE7;
+			productRefGroup = E5131AAF1E5A9FCA0083FAE7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5131AAD1E5A9FCA0083FAE7 /* ZJSDateConvert */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5131AAC1E5A9FCA0083FAE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5131AC11E5A9FCA0083FAE7 /* LaunchScreen.storyboard in Resources */,
+				E5131ABE1E5A9FCA0083FAE7 /* Assets.xcassets in Resources */,
+				E5131ABC1E5A9FCA0083FAE7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5131AAA1E5A9FCA0083FAE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5131ADA1E5AA0370083FAE7 /* DateConvert.m in Sources */,
+				E5131AE81E5AA0880083FAE7 /* BirthdayData.m in Sources */,
+				E5131AB91E5A9FCA0083FAE7 /* ViewController.m in Sources */,
+				E5131AB61E5A9FCA0083FAE7 /* AppDelegate.m in Sources */,
+				E5131ADB1E5AA0370083FAE7 /* DateViewController.m in Sources */,
+				E5131AB31E5A9FCA0083FAE7 /* main.m in Sources */,
+				E5131AE91E5AA0880083FAE7 /* LeapMonthInfo.m in Sources */,
+				E5131AD81E5AA0370083FAE7 /* convertGB_BIG.m in Sources */,
+				E5131AEA1E5AA0880083FAE7 /* DateControlView.m in Sources */,
+				E5131AEB1E5AA0880083FAE7 /* PickerViewLabel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E5131ABA1E5A9FCA0083FAE7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5131ABB1E5A9FCA0083FAE7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E5131ABF1E5A9FCA0083FAE7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5131AC01E5A9FCA0083FAE7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E5131AC31E5A9FCA0083FAE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E5131AC41E5A9FCA0083FAE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5131AC61E5A9FCA0083FAE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZJSDateConvert/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sengled.ZJSDateConvert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E5131AC71E5A9FCA0083FAE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZJSDateConvert/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sengled.ZJSDateConvert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5131AA91E5A9FCA0083FAE7 /* Build configuration list for PBXProject "ZJSDateConvert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5131AC31E5A9FCA0083FAE7 /* Debug */,
+				E5131AC41E5A9FCA0083FAE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5131AC51E5A9FCA0083FAE7 /* Build configuration list for PBXNativeTarget "ZJSDateConvert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5131AC61E5A9FCA0083FAE7 /* Debug */,
+				E5131AC71E5A9FCA0083FAE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E5131AA61E5A9FCA0083FAE7 /* Project object */;
+}
